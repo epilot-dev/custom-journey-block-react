@@ -21,6 +21,7 @@ This is a starter project for creating custom journey blocks for the Epilot plat
    ```bash
    npm run dev
    ```
+   This would serve a build version of the app and would listen to changes in the files to refresh.
 
 4. Build for production:
    ```bash
