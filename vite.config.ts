@@ -8,6 +8,10 @@ export default defineConfig({
   preview: {
       allowedHosts: true
   },
+  define: {
+    'process.env': {},
+    process: {}
+  },
   build: {
     lib: {
     name: 'MyLibrary',
@@ -16,9 +20,15 @@ export default defineConfig({
       fileName: () => 'bundle.js', // Forces a single output file
     },
     rollupOptions: {
-      external: [], // Don't mark any dependencies as external
+      external: ['react', 'react-dom', '@epilot/concorde-elements'],
+      
       output: {
-        inlineDynamicImports: true, // Ensures a single file output
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          '@epilot/concorde-elements': 'Concorde'
+        },
+        inlineDynamicImports: true
       },
     },
     cssCodeSplit: false, // Ensures a single CSS file output
