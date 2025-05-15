@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run build -- --watch & npx serve ./dist",
+    "dev": "npm run build -- --watch & npx http-server ./dist --cors --port 3000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
